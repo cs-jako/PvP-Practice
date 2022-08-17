@@ -1,0 +1,5 @@
+prefix: "&7[&aDUELS&7] &r"
+lobby: "lobbies/main"
+arenas:
+  - "arenas/Biome"
+  - "arenas/Temple"

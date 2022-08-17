@@ -1,0 +1,5 @@
+name: PvP-Library
+main: net.crazy.pvplib.Library
+version: 1.0-SNAPSHOT
+depend:
+  - ProtocolLib

@@ -1,0 +1,6 @@
+name: PvP-Practice
+main: net.crazy.pvpgame.Practice
+version: 1.0-SNAPSHOT
+depend:
+  - PvP-Library
+  - ProtocolLib
