@@ -1,5 +1,5 @@
-<h1>⚔️ PvP-Practice ⚔️</h1>
-<p>
+<h1 align="center">⚔️ PvP-Practice ⚔️</h1>
+<p align="center">
     Easy to use PvP spigot plugin
 </p>
 <br>
