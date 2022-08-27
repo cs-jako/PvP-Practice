@@ -1,5 +1,5 @@
-<h1 align="center">⚔️ PvP-Practice ⚔️</h1>
-<p align="center">
+<h1>⚔️ PvP-Practice ⚔️</h1>
+<p>
     Easy to use PvP spigot plugin
 </p>
 <br>
@@ -39,26 +39,42 @@
 </p>
 <br>
 
+<h4><b>Plugin</b></h4>
+
+```yml
+prefix: "&7[&aDUELS&7] &r" # Prefix of the messages send to the player
+lobby: "main" # Name of the world folder in path 'lobbies/'. This world will be used as the lobby. See below to configure the lobby world properly
+arenas: # Name of the world folders in path 'arenas/' that should be enabled & used. See below to configure the arena worlds properly
+  - "Biomes"
+  - "Temple"
+
+kits: # Enable / disable certain kits
+  bow: true
+  rod: true
+```
+
+<br>
+
 <h4><b>Lobby</b></h4>
 <p>Place signs in the lobby world(s) with these settings</p>
 <table>
     <thead>
         <tr>
-            <td align="center"><b>❓ Usage</b></td>
-            <td align="center"><b>🗒️ First line</b></td>
-            <td align="center"><b>❗ Max amount</b></td>
+            <td><b>❓ Usage</b></td>
+            <td><b>🗒️ First line</b></td>
+            <td><b>❗ Max amount</b></td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td align="center">Player spawn</td>
-            <td align="center"><code>{{lobby_spawn}}</code></td>
-            <td align="center"><b>1</b></td>
+            <td>Player spawn</td>
+            <td><code>{{lobby_spawn}}</code></td>
+            <td><b>1</b></td>
         </tr>
         <tr>
-            <td align="center">NPC Location</td>
-            <td align="center"><code>{{lobby_npc}}</code></td>
-            <td align="center"><b>♾️</b></td>
+            <td>NPC Location</td>
+            <td><code>{{lobby_npc}}</code></td>
+            <td><b>♾️</b></td>
         </tr>
     </tbody>
 </table>
@@ -66,14 +82,40 @@
 <p>
     In the main lobby folder <i>(for example <code>lobbies/main</code>)</i> create a file called <code>config.yml</code>. <br>
     <u>Content example:</u><br>
+
+```yml
+npc-skins: # Set the skin of the NPCs via the UUIDs you can add as many UUIDs as you have NPCs
+  - "26d45041-3742-41f5-85ca-24ec4387347c"
+  - "fdef0011-1c58-40c8-bfef-0bdcb1495938"
+npc-name: "&6Queue" # Name above the NPCs
+```
+
 </p>
-<h1>TODO</h1>
-
-
-<h4><b>Plugin</b></h4>
 <br>
 
-<h3>🚧 Todo</h3>
+<h4><b>Arenas</b></h4>
+<p>Place signs in the arena world(s) with these settings</p>
+<table>
+    <thead>
+        <tr>
+            <td><b>❓ Usage</b></td>
+            <td><b>🗒️ First line</b></td>
+            <td><b>🗒️ Second line</b></td>
+            <td><b>❗ Max amount</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Player spawn</td>
+            <td><code>{{arena}}</code></td>
+            <td><code>{{spawn}}</code></td>
+            <td>1</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+
+<h3>🚧 Roadmap</h3>
 <table>
     <thead>
         <tr>
@@ -90,6 +132,16 @@
         </tr>
         <tr>
             <td>API</td>
+            <td>💡 Planned</td>
+            <td>❌ Not yet</td>
+        </tr>
+        <tr>
+            <td>Laby-Features</td>
+            <td>💡 Planned</td>
+            <td>❌ Not yet</td>
+        </tr>
+        <tr>
+            <td>Kit Selector Rework</td>
             <td>💡 Planned</td>
             <td>❌ Not yet</td>
         </tr>
