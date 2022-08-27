@@ -15,6 +15,10 @@ public abstract class Kit {
 
     public Kit(Practice instance) {
         this.instance = instance;
+
+        if (!instance.getConfig().getBoolean("kits." + getConfigKey()))
+            return;
+
         instance.kits.add(this);
         instance.queue.initializeKit(this);
     }
@@ -27,6 +31,7 @@ public abstract class Kit {
         for (Player player : players) {
             PlayerInventory inventory = player.getInventory();
             inventory.clear();
+            player.updateInventory();
 
             inventory.setItem(0, getPrimaryWeapon() != null ? getPrimaryWeapon() : air);
             inventory.setItem(1, getSecondaryWeapon() != null ? getSecondaryWeapon() : air);
@@ -37,9 +42,11 @@ public abstract class Kit {
             inventory.setLeggings(getLeggings());
             inventory.setBoots(getBoots());
 
-            ItemStack[] items = new ItemStack[getAdditionalItems().size()];
-            getAdditionalItems().toArray(items);
-            inventory.addItem(items);
+            if (getAdditionalItems() != null) {
+                ItemStack[] items = new ItemStack[getAdditionalItems().size()];
+                getAdditionalItems().toArray(items);
+                inventory.addItem(items);
+            }
 
             player.updateInventory();
         }
@@ -47,6 +54,8 @@ public abstract class Kit {
 
     public abstract ItemStack getRepresentationItem();
     public abstract String getName();
+
+    public abstract String getConfigKey();
 
     abstract ItemStack getPrimaryWeapon();
     abstract ItemStack getSecondaryWeapon();
