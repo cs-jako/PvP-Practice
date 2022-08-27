@@ -57,8 +57,9 @@ public class GameEvents implements Listener {
         Player killer = player.getKiller();
         game.sendMessage("§6" + killer.getDisplayName() + "§a won the game! gg!");
 
-        for (Player p : game.getPlayers())
-            p.teleport(instance.lobbySpawn);
+        for (Player p : game.getPlayers()) {
+            p.spigot().respawn();
+        }
 
         game.stop();
     }
