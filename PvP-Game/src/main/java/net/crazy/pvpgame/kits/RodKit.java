@@ -24,6 +24,11 @@ public class RodKit extends Kit {
     }
 
     @Override
+    public String getConfigKey() {
+        return "rod";
+    }
+
+    @Override
     ItemStack getPrimaryWeapon() {
         return new ItemManager(Material.IRON_SWORD, 1).setUnbreakable().build();
     }

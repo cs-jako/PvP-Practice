@@ -24,6 +24,11 @@ public class BowKit extends Kit {
     }
 
     @Override
+    public String getConfigKey() {
+        return "bow";
+    }
+
+    @Override
     ItemStack getPrimaryWeapon() {
         return new ItemManager(Material.BOW, 1).setDisplayName("§6Bow")
                 .addEnchantment(Enchantment.ARROW_KNOCKBACK, 1)
