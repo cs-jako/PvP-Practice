@@ -1,5 +1,9 @@
 prefix: "&7[&aDUELS&7] &r"
-lobby: "lobbies/main"
+lobby: "main"
 arenas:
-  - "arenas/Biome"
-  - "arenas/Temple"
+  - "Biome"
+  - "Temple"
+
+kits:
+  bow: true
+  rod: true
