@@ -99,9 +99,14 @@ public class Game {
      */
     private void selectArena() {
         List<String> arenaPaths = instance.getConfig().getStringList("arenas");
-        int i = new Random().nextInt(arenaPaths.size() - 1);
+        int i;
 
-        String basePath = arenaPaths.get(i);
+        if (arenaPaths.size() == 1)
+            i = 0;
+        else
+            i = new Random().nextInt(arenaPaths.size() - 1);
+
+        String basePath = "arenas/" + arenaPaths.get(i);
         String path = "games/arena_" + UUID.randomUUID().toString().split("-")[0];
 
         instance.duplicateDirectory(basePath, path);
@@ -131,7 +136,8 @@ public class Game {
 
     /**
      * Easy access method to send a message to both participants
-     * @param message   message to send to the participants
+     *
+     * @param message message to send to the participants
      */
     public void sendMessage(String message) {
         for (Player player : players) {
