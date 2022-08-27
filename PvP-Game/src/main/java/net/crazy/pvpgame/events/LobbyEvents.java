@@ -25,6 +25,7 @@ public class LobbyEvents implements Listener {
     /**
      * Called when a player joins the server
      * Teleports said player to the lobby spawn and setting the GameMode
+     *
      * @param event PlayerJoinEvent instance
      */
     @EventHandler
@@ -32,12 +33,18 @@ public class LobbyEvents implements Listener {
         event.setJoinMessage(null);
 
         Player player = event.getPlayer();
+
+        player.getInventory().clear();
+        player.getInventory().setArmorContents(null);
+        player.updateInventory();
+
         player.setGameMode(GameMode.ADVENTURE);
         player.teleport(instance.lobbySpawn);
     }
 
     /**
      * Preventing damage in non-arena worlds
+     *
      * @param event EntityDamageEvent instance
      */
     @EventHandler
@@ -55,6 +62,7 @@ public class LobbyEvents implements Listener {
 
     /**
      * Resetting the inventory when players are teleported to the lobby
+     *
      * @param event PlayerTeleportEvent instance
      */
     @EventHandler
@@ -65,6 +73,7 @@ public class LobbyEvents implements Listener {
         Player player = event.getPlayer();
 
         player.getInventory().clear();
+        player.getInventory().setArmorContents(null);
         for (Kit kit : instance.kits)
             player.getInventory().addItem(kit.getRepresentationItem());
         player.updateInventory();
@@ -77,6 +86,7 @@ public class LobbyEvents implements Listener {
 
     /**
      * Preventing players from having to eat
+     *
      * @param event FoodLevelChangeEvent instance
      */
     @EventHandler
@@ -86,6 +96,7 @@ public class LobbyEvents implements Listener {
 
     /**
      * Handles the basics of a player quitting
+     *
      * @param event PlayerQuitEvent instance
      */
     @EventHandler
@@ -96,6 +107,7 @@ public class LobbyEvents implements Listener {
 
     /**
      * Preventing dropping items
+     *
      * @param event PlayerDropItemEvent instance
      */
     @EventHandler
@@ -108,6 +120,7 @@ public class LobbyEvents implements Listener {
 
     /**
      * Preventing block breaking
+     *
      * @param event BlockBreakEvent instance
      */
     @EventHandler
@@ -128,6 +141,7 @@ public class LobbyEvents implements Listener {
 
     /**
      * Preventing the message of achievements
+     *
      * @param event PlayerAchievementAwardedEvent instance
      */
     @EventHandler
