@@ -27,8 +27,6 @@
 <p>
     In your main server folder, create two folders. One called <code>lobbies</code> and the other one called
     <code>arenas</code>. <br>
-    In the lobbies folder create a world <code>main</code>. <br>
-    Please read the lobby configuration tutorial.    
 </p>
 <br>
 
