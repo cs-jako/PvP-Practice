@@ -45,7 +45,7 @@ public class Practice extends JavaPlugin {
         startupChecks();
 
         // Creating a safe copy of the lobby
-        duplicateDirectory(getConfig().getString("lobby"), "lobby");
+        duplicateDirectory("lobbies/" + getConfig().getString("lobby"), "lobby");
         lobby = Bukkit.createWorld(new WorldCreator("lobby"));
         prepareWorld(lobby, false);
         prepareLobby();
