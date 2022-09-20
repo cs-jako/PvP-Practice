@@ -107,7 +107,7 @@ npc-name: "&6Queue" # Name above the NPCs
             <td>Player spawn</td>
             <td><code>{{arena}}</code></td>
             <td><code>{{spawn}}</code></td>
-            <td>1</td>
+            <td>2</td>
         </tr>
     </tbody>
 </table>
