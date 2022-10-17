@@ -3,14 +3,16 @@ package net.crazy.pvpgame.kits;
 
 import net.crazy.pvpgame.Practice;
 import net.crazy.pvplib.library.manager.ItemManager;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 
 import java.util.List;
 
-public abstract class Kit {
+public abstract class Kit implements Listener {
     public final Practice instance;
 
     public Kit(Practice instance) {
@@ -21,6 +23,7 @@ public abstract class Kit {
 
         instance.kits.add(this);
         instance.queue.initializeKit(this);
+        Bukkit.getPluginManager().registerEvents(this, instance);
     }
 
     /**
