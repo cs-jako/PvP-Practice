@@ -125,7 +125,7 @@ npc-name: "&6Queue" # Name above the NPCs
     <tbody>
         <tr>
             <td>More kits</td>
-            <td>💡 Planned</td>
+            <td>⏱️ In Progress</td>
             <td>❌ Not yet</td>
         </tr>
         <tr>
