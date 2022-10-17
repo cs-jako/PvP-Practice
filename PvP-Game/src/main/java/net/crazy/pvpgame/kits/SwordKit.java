@@ -30,7 +30,8 @@ public class SwordKit extends Kit {
 
     @Override
     ItemStack getPrimaryWeapon() {
-        return new ItemManager(Material.IRON_SWORD, 1).build();
+        return new ItemManager(Material.IRON_SWORD, 1).setUnbreakable()
+                .build();
     }
 
     @Override
