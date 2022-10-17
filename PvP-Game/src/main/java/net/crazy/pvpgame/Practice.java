@@ -70,6 +70,7 @@ public class Practice extends JavaPlugin {
         // Loading kits
         new BowKit(this);
         new RodKit(this);
+        new SwordKit(this);
 
         // Checking the queue
         Bukkit.getScheduler().scheduleSyncRepeatingTask(this, queue::check, 10 * 20L, 7 * 20L);
