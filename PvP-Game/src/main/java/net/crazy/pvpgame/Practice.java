@@ -68,6 +68,7 @@ public class Practice extends JavaPlugin {
         new GameEvents(this);
 
         // Loading kits
+        new AxeKit(this);
         new BowKit(this);
         new RodKit(this);
         new SwordKit(this);
