@@ -129,6 +129,21 @@ npc-name: "&6Queue" # Name above the NPCs
             <td>❌ Not yet</td>
         </tr>
         <tr>
+            <td>Stats System</td>
+            <td>💡 Planned</td>
+            <td>❌ Not yet</td>
+        </tr>
+        <tr>
+            <td>Ranked System</td>
+            <td>💡 Planned</td>
+            <td>❌ Not yet</td>
+        </tr>
+        <tr>
+            <td>Scoreboard</td>
+            <td>💡 Planned</td>
+            <td>❌ Not yet</td>
+        </tr>
+        <tr>
             <td>API</td>
             <td>💡 Planned</td>
             <td>❌ Not yet</td>
