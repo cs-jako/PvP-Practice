@@ -2,6 +2,7 @@ package net.crazy.pvpgame.game;
 
 import net.crazy.pvpgame.Practice;
 import net.crazy.pvpgame.kits.Kit;
+import net.crazy.pvplib.library.manager.StatManager;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
@@ -116,9 +117,22 @@ public class Game {
     /**
      * Stops the game and teleports the player back to the lobby.
      */
-    public void stop() {
+    public void stop(Player winner) {
         instance.runningGames.remove(this);
         for (Player player : players) {
+            StatManager statManager = instance.playerStats.get(player);
+            statManager.setGamesPlayed(statManager.getGamesPlayed() + 1);
+
+            if (player == winner) {
+                statManager.setWins(statManager.getWins() + 1);
+                statManager.setKills(statManager.getKills() + 1);
+            } else {
+                statManager.setLosses(statManager.getLosses() + 1);
+                statManager.setDeaths(statManager.getDeaths() + 1);
+            }
+
+            statManager.update();
+
             if (!player.isOnline())
                 continue;
 
@@ -151,6 +165,19 @@ public class Game {
 
     public boolean isPlayer(Player player) {
         return players[0] == player || players[1] == player;
+    }
+
+    /**
+     * Gets the opponent of a player
+     * @param player known player
+     * @return opponent
+     */
+    public Player getOpponent(Player player) {
+        for (Player p : players)
+            if (p != player)
+                return p;
+
+        return null;
     }
 
     public Player[] getPlayers() {

@@ -2,6 +2,7 @@ package net.crazy.pvpgame.events;
 
 import net.crazy.pvpgame.Practice;
 import net.crazy.pvpgame.game.Game;
+import net.crazy.pvplib.library.manager.StatManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -31,7 +32,7 @@ public class GameEvents implements Listener {
             return;
 
         game.sendMessage("§cThe other player left the game!");
-        game.stop();
+        game.stop(game.getOpponent(player));
     }
 
     /**
@@ -61,6 +62,6 @@ public class GameEvents implements Listener {
             p.spigot().respawn();
         }
 
-        game.stop();
+        game.stop(killer);
     }
 }
