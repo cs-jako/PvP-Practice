@@ -2,6 +2,7 @@ package net.crazy.pvpgame.events;
 
 import net.crazy.pvpgame.Practice;
 import net.crazy.pvpgame.kits.Kit;
+import net.crazy.pvplib.library.manager.StatManager;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
@@ -40,6 +41,8 @@ public class LobbyEvents implements Listener {
 
         player.setGameMode(GameMode.ADVENTURE);
         player.teleport(instance.lobbySpawn);
+
+        instance.playerStats.put(player, new StatManager(player));
     }
 
     /**
@@ -102,6 +105,7 @@ public class LobbyEvents implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
         instance.queue.removeFromQueue(event.getPlayer());
+        instance.playerStats.remove(event.getPlayer());
         event.setQuitMessage(null);
     }
 

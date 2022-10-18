@@ -6,6 +6,7 @@ import net.crazy.pvpgame.game.*;
 import net.crazy.pvpgame.kits.*;
 import net.crazy.pvpgame.util.NPCUtil;
 import net.crazy.pvplib.library.MCLogger;
+import net.crazy.pvplib.library.manager.StatManager;
 import net.crazy.pvplib.library.world.BlockFinder;
 import org.apache.commons.io.FileUtils;
 import org.bukkit.*;
@@ -18,6 +19,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Practice extends JavaPlugin {
@@ -32,10 +34,12 @@ public class Practice extends JavaPlugin {
 
     public ArrayList<Game> runningGames = new ArrayList<>();
     public ArrayList<Kit> kits = new ArrayList<>();
+    public HashMap<Player, StatManager> playerStats = new HashMap<>();
 
     @Override
     public void onEnable() {
         this.saveDefaultConfig();
+        new File("plugins/PvP-Practice/stats/").mkdir();
 
         // Getting and fixing color codes of the prefix
         this.prefix = getConfig().getString("prefix");
