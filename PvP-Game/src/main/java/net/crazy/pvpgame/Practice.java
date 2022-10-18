@@ -71,6 +71,7 @@ public class Practice extends JavaPlugin {
         new AxeKit(this);
         new BowKit(this);
         new RodKit(this);
+        new SkyWarsKit(this);
         new SwordKit(this);
 
         // Checking the queue
