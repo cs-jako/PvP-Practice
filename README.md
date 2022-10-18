@@ -130,7 +130,7 @@ npc-name: "&6Queue" # Name above the NPCs
         </tr>
         <tr>
             <td>Stats System</td>
-            <td>💡 Planned</td>
+            <td>⏱️ In Progress</td>
             <td>❌ Not yet</td>
         </tr>
         <tr>
