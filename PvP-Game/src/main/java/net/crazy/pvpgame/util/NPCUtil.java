@@ -27,7 +27,7 @@ public class NPCUtil implements Listener {
         this.instance = instance;
 
         String filePath = instance.lobby.getWorldFolder().getPath();
-        configManager = new ConfigManager(filePath + "\\config.yml");
+        configManager = new ConfigManager(filePath + "/config.yml");
 
         if (!configManager.fileExists()) {
             MCLogger.log(MCLogger.LogType.ERROR, "Please create a config.yml file in the base folder of the lobby.");
